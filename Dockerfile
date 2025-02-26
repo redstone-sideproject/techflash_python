@@ -15,4 +15,4 @@ RUN pip install --no-cache-dir --upgrade pip \
 COPY . .
 
 # 6. 컨테이너 실행 시 FastAPI 서버 실행
-CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "src.main:app"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
