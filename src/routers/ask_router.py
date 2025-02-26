@@ -14,7 +14,7 @@ class QuestionResponse(BaseModel):
     answer: LearningCardResponse
 
 
-@router.get("/", response_model=QuestionResponse, status_code=status.HTTP_200_OK)
+@router.post("/", response_model=QuestionResponse, status_code=status.HTTP_200_OK)
 async def ask(request: QuestionRequest):
     try:
         question = request.question.strip()
